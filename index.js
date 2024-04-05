@@ -5,8 +5,6 @@ import { Book } from "./models/bookmodel.js";
 import bodyPaser from "body-parser";
 import booksRoute from "./routes/booksRoute.js";
 import cors from "cors";
-const morgan = require("morgan");
-const path = require("path");
 import path from "path";
 import morgan from "morgan";
 
