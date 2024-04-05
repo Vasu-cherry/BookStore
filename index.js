@@ -17,12 +17,11 @@ app.use(cors());
 //})
 //);
 
-app.get("/", (request, response) => {
-  console.log(request);
-  return response.status(234).send("Welcome To MERN Stack Tutorial");
-});
-
 app.use("/books", booksRoute);
+app.use(express.static(path.join(__dirname, "./dist")));
+app.get("*", function (req, res) {
+  res.sendFile(path.join(__dirname, "./dist/index.html"));
+});
 
 mongoose
   .connect(mongodburl)
