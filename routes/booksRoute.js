@@ -1,5 +1,5 @@
-import express from "express";
-import { Book } from "../models/bookmodel.js";
+const express = require("express");
+const { Book } = require("../models/bookmodel.js");
 
 const router = express.Router();
 
@@ -95,4 +95,4 @@ router.delete("/:id", async (request, response) => {
   }
 });
 
-export default router;
+module.exports = router;

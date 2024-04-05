@@ -1,12 +1,12 @@
-import express, { request, response } from "express";
-import { PORT, mongodburl } from "./config.js";
-import mongoose from "mongoose";
-import { Book } from "./models/bookmodel.js";
-import bodyPaser from "body-parser";
-import booksRoute from "./routes/booksRoute.js";
-import cors from "cors";
-import path from "path";
-import morgan from "morgan";
+const express = require("express");
+const { PORT, mongodburl } = require("./config.js");
+const mongoose = require("mongoose");
+const { Book } = require("./models/bookmodel.js");
+const bodyPaser = require("body-parser");
+const booksRoute = require("./routes/booksRoute.js");
+const cors = require("cors");
+const path = require("path");
+const morgan = require("morgan");
 
 const app = express();
 app.use(bodyPaser.json());

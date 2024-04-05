@@ -1,8 +1,8 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
 const bookSchema = mongoose.Schema(
   {
-    tittle: {
+    title: {
       type: String,
       required: true,
     },
@@ -20,4 +20,8 @@ const bookSchema = mongoose.Schema(
   }
 );
 
-export const Book = mongoose.model("cat", bookSchema);
+const Book = mongoose.model("Book", bookSchema);
+
+module.exports = {
+  Book: Book,
+};
