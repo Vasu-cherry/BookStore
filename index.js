@@ -5,6 +5,10 @@ import { Book } from "./models/bookmodel.js";
 import bodyPaser from "body-parser";
 import booksRoute from "./routes/booksRoute.js";
 import cors from "cors";
+const morgan = require("morgan");
+const path = require("path");
+import path from "path";
+import morgan from "morgan";
 
 const app = express();
 app.use(bodyPaser.json());
@@ -16,7 +20,7 @@ app.use(cors());
 //allowedHeaders: ["content-Type"],
 //})
 //);
-
+app.use(morgan("dev"));
 app.use("/books", booksRoute);
 app.use(express.static(path.join(__dirname, "./dist")));
 app.get("*", function (req, res) {
